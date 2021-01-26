@@ -19,7 +19,7 @@ ReactDOM.render(
           <Switch>
             {
               routes.map((route, idx) => (
-                <Route {...route} key={idx}/>
+                <Route {...route} key={idx} />
               ))
             }
           </Switch>

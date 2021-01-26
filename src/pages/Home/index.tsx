@@ -1,22 +1,17 @@
 import React, { FC } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-
-import { AppState } from "@/redux/reducers";
-import { getStateCreation } from "@/redux/chat/actionsCreators";
+import { firestore } from "@/firebase";
+import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 const Home: FC = () => {
-  const dispatch = useDispatch()
-  const chats = useSelector((state: AppState) => state.chats)
+  const messagesRef = firestore.collection('messages');
+  const query = messagesRef.orderBy('createdAt').limitToLast(25);
 
-  const handleClick = () => {
-    dispatch(getStateCreation())
-  }
+  const [messages] = useCollectionData(query, { idField: 'id' });
 
-  console.log(chats);
   return (
     <div>
       Home
-      <button onClick={handleClick}>Click</button>
+      <button >Click</button>
     </div>
   )
 }
