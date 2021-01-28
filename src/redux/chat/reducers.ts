@@ -12,7 +12,7 @@ const initialState: IChatState = {
 };
 
 export default function userReducer(
-  state: IChatState = initialState,
+  state = initialState,
   action: AnyAction
 ) {
   switch (action.type) {

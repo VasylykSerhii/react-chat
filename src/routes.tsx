@@ -2,6 +2,8 @@
 import Home from '@/pages/Home'
 import { RouteProps } from 'react-router-dom'
 
+import LogIn from '@pages/Log-In'
+
 const routes: RouteProps[] = [
   { 
     path: '/', 
@@ -9,15 +11,10 @@ const routes: RouteProps[] = [
     children: <Home/>
   },
   { 
-    path: '/about', 
+    path: '/log-in', 
     exact: true,
-    children: <p>About</p>
+    children: <LogIn/>
   },
-  { 
-    path: '/users', 
-    exact: true,
-    children: <p>Users</p>
-  }
 ]
 
 export default routes
