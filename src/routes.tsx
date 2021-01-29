@@ -1,21 +1,18 @@
+import React from 'react'
+import { Switch, Route } from "react-router-dom";
 
+import { PrivateRoute } from '@/helpest/PrivateRouter'
 import Home from '@/pages/Home'
-import { RouteProps } from 'react-router-dom'
-
 import LogIn from '@pages/Log-In'
 
-const routes: RouteProps[] = [
-  { 
-    path: '/', 
-    exact: true,
-    children: <Home/>
-  },
-  { 
-    path: '/log-in', 
-    exact: true,
-    children: <LogIn/>
-  },
-]
+const Routes = () => {
+  return (
+    <Switch>
+      <Route path="/log-in" children={<LogIn />} exact={true} />
+      <PrivateRoute path="/" children={<Home />} exact={true} />
+    </Switch>
+  )
+}
 
-export default routes
+export default Routes
 

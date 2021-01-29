@@ -1,12 +1,9 @@
 import React, { FC } from "react";
-import { Switch, Route } from "react-router-dom";
 import styled from "styled-components"
 
-import routes from "@/routes.tsx";
-import { PrivateRoute } from '@/helpest/PrivateRouter'
+import Routes from "@/routes.tsx";
 import Theme from "@/helpest/app/theme";
 import './reset.css'
-
 
 const Wrapper = styled.section`
   color: ${props => props.theme.colors.light};
@@ -18,14 +15,7 @@ const App: FC = () => {
   return (
     <Theme>
       <Wrapper>
-        <Switch>
-          {routes.map((route, idx) => (
-            <PrivateRoute
-              key={idx}
-              {...route}
-            />
-          ))}
-        </Switch>
+        <Routes />
       </Wrapper>
     </Theme>
   );
