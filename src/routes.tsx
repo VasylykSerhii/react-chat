@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { Switch, Route } from "react-router-dom";
 
 import { PrivateRoute } from '@/helpest/PrivateRouter'
 import Home from '@/pages/Home'
 import LogIn from '@pages/Log-In'
 
-const Routes = () => {
+const Routes: FC = () => {
   return (
     <Switch>
       <Route path="/log-in" children={<LogIn />} exact={true} />

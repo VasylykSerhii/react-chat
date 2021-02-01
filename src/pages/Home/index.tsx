@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import { firestore } from "@/firebase";
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
+import Layout from '@/components/Layout'
 const Home: FC = () => {
   interface IChatMessages {
     text: string
@@ -12,10 +13,13 @@ const Home: FC = () => {
 
   const [messages] = useCollectionData<IChatMessages>(query, { idField: 'id' });
 
+
+console.log(messages);
+
   return (
-    <div>
+    <Layout>
       Home <button >Click</button>
-    </div>
+    </Layout>
   )
 }
 

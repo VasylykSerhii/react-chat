@@ -1,19 +1,15 @@
-import React, { FC } from 'react'
-import { useAuthState } from 'react-firebase-hooks/auth';
+import React, { FC, useEffect } from 'react'
 import { Redirect } from "react-router-dom";
 
-import { auth } from '@/firebase'
 import { Wrapper } from './style.component'
 import LogInForm from '@/components/LogInForm'
 
 const LogIn: FC = () => {
-  const [user] = useAuthState(auth);
-
-  return user
+  return localStorage.getItem('accessToken')
     ? <Redirect to="/" />
     : <Wrapper>
-        <LogInForm />
-      </Wrapper>
+      <LogInForm />
+    </Wrapper>
 
 }
 
