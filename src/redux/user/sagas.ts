@@ -6,7 +6,8 @@ import { GET_USER_ACTION } from "./actionsTypes";
 
 export function* GET_USER(action) {
   yield put(setUseCreation({ loading: true }));
-
+  
+console.log(action)
   const {
     email, family_name, given_name, id, picture
   } = action.payload.additionalUserInfo.profile;

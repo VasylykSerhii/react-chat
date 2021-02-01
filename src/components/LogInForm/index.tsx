@@ -27,10 +27,15 @@ const LogIn: FC = () => {
     }, [email, password],
   )
 
+  console.log(auth);
+
   const signIn = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>) => {
       auth.signInWithEmailAndPassword(email, password)
-        .then(res =>  history.push("/"))
+        .then(res => {
+          dispatch(getUseCreation(res))
+          history.push("/")
+        })
     }, [email, password],
   )
   const signInWithGoogle = () => {
