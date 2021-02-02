@@ -1,10 +1,14 @@
-import React, { FC } from 'react'
 import { Wrapper } from './style.component'
-import {IChatMessages} from '@/pages/Chat'
+import { IChatMessages } from '@/pages/Chat'
 
-const Message: FC<IChatMessages> = ({message}) => {
+type Props = {
+  message: IChatMessages,
+  key?: string
+}
+
+const Message = ({ message, key }: Props): JSX.Element => {
   return (
-    <Wrapper>
+    <Wrapper >
     </Wrapper>
   )
 }

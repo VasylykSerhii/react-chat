@@ -41,6 +41,8 @@ const Home: FC = () => {
     }
   }
 
+  
+  // console.log(messages);
   return (
     <Layout>
       <Wrapper>
@@ -51,7 +53,7 @@ const Home: FC = () => {
                 <Message
                   key={message.id}
                   message={message}
-                />) || null
+                />)
             }
           </Messages>
           <InputWrap>
