@@ -24,6 +24,8 @@ export const Messages = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
+  overflow-y: auto;
+  padding: 20px;
 `
 
 export const InputWrap = styled.div`
