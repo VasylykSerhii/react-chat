@@ -19,9 +19,13 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@pages/*": ["./src/pages/*"],
+    }
   },
-  "extends": "./tsconfig.paths.json",
   "typeRoots": [
     "node_modules/@types"
   ],
