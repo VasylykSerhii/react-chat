@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import styled from "styled-components"
 
-import Routes from "@/routes.tsx";
-import Theme from "@/helpest/app/theme";
+import Routes from "../../utils/routes";
+import Theme from "helpest/app/theme";
 import './reset.css'
 
 const Wrapper = styled.section`

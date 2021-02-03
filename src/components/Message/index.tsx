@@ -1,8 +1,8 @@
 import React, { useRef, useEffect } from "react"
 import { Wrapper } from './style.component'
-import { IChatMessages } from '@/pages/Chat'
+import { IChatMessages } from 'pages/Chat'
 
-import { auth } from "@/firebase";
+import { auth } from "../../utils/firebase";
 import { MessageWrap, Avatar, MessageText, Name, Text } from './style.component'
 
 type Props = {

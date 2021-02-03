@@ -1,6 +1,6 @@
 import { SET_USER_ACTION, GET_USER_ACTION } from "./actionsTypes";
 import { IUserState } from "./reducers";
-import firebase from '@/firebase'
+import firebase from 'utils/firebase'
 
 export const setUseCreation = (payload: Partial<IUserState>) => {
   return {

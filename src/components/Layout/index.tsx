@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from 'react'
-import Menu from '@/components/Menu'
+import Menu from 'components/Menu'
 
 import {Wraper} from './style.component'
 

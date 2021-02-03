@@ -1,6 +1,6 @@
 import { useHistory } from "react-router-dom";
 
-import { auth } from '@/firebase'
+import { auth } from '../../utils/firebase'
 import { MenuWrap, Wraper, LogOutBtn } from './style.component'
 
 const Menu = (): JSX.Element => {

@@ -2,10 +2,12 @@ import React, { useRef, useState, useEffect } from 'react'
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
-import firebase, { firestore, auth } from "@/firebase";
-import Layout from '@/components/Layout'
+import firebase, { firestore, auth } from "../../utils/firebase";
+import Layout from 'components/Layout'
 import { Wrapper, Chat, Messages, InputWrap, Textarea, StyledIcon } from './style.component'
-import Message from '@/components/Message'
+import Message from 'components/Message'
+
+
 export interface IChatMessages {
   text: string,
   createdAt?: {

@@ -4,8 +4,8 @@ import { Provider } from 'react-redux'
 import { Router } from 'react-router';
 
 import store from './redux/store'
-import { history } from '@/history'
-import App from '@/helpest/app'
+import { history } from 'utils/history'
+import App from 'helpest/app'
 
 ReactDOM.render(
   <React.StrictMode>

@@ -10,9 +10,9 @@ import {
   Wraper, Img, Input, Form, InputWrap, Button, Link, SocialWrap
 } from './style-component'
 
-import firebase, { auth } from '@/firebase'
-import manImg from '@/assets/images/man-300x300.png'
-import { getUseCreation } from '@/redux/user/actionsCreators'
+import firebase, { auth } from '../../utils/firebase'
+import manImg from 'assets/images/man-300x300.png'
+import { getUseCreation } from 'redux/user/actionsCreators'
 
 const LogIn: FC = () => {
   const dispatch = useDispatch()
