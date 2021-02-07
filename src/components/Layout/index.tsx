@@ -1,22 +1,20 @@
-import React, { FC, ReactNode } from 'react'
-import Menu from 'components/Menu'
+import React, { FC, ReactNode } from "react";
+import Menu from "components/menu";
 
-import {Wraper} from './style.component'
+import { Wraper } from "./style.component";
 
 const Layout: FC<ReactNode> = ({ children }) => {
   return (
-    <Wraper >
+    <Wraper>
       {/* <Head>
         <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:url" content={url} />
       </Head> */}
       <Menu />
-      <main>
-        {children}
-      </main>
+      <main>{children}</main>
     </Wraper>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

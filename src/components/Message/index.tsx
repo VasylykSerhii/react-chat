@@ -1,13 +1,19 @@
-import { Wrapper } from './style.component'
-import { IChatMessages } from 'pages/Chat'
+import { Wrapper } from "./style.component";
+import { IChatMessages } from "pages/chat";
 
 import { auth } from "../../utils/firebase";
-import { MessageWrap, Avatar, MessageText, Name, Text } from './style.component'
+import {
+  MessageWrap,
+  Avatar,
+  MessageText,
+  Name,
+  Text,
+} from "./style.component";
 
 type Props = {
-  message: IChatMessages,
-  key?: string
-}
+  message: IChatMessages;
+  key?: string;
+};
 
 const Message = ({ message, key }: Props): JSX.Element => {
   return (
@@ -19,8 +25,8 @@ const Message = ({ message, key }: Props): JSX.Element => {
           <Text>{message.text}</Text>
         </MessageText>
       </MessageWrap>
-    </Wrapper >
-  )
-}
+    </Wrapper>
+  );
+};
 
-export default Message
+export default Message;

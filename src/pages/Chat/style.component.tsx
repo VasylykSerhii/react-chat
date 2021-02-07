@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Wrapper = styled.div`
@@ -7,10 +7,10 @@ export const Wrapper = styled.div`
   justify-content: center;
   width: 100vw;
   height: calc(100vh - 88px);
-`
+`;
 
 export const Chat = styled.div`
-    display: flex;
+  display: flex;
   flex-direction: column;
   background-color: #222831;
   width: 600px;
@@ -18,7 +18,7 @@ export const Chat = styled.div`
   max-width: calc(100% - 30px);
   max-height: calc(100% - 30px);
   overflow: hidden;
-`
+`;
 
 export const Messages = styled.div`
   display: flex;
@@ -26,7 +26,7 @@ export const Messages = styled.div`
   height: 100%;
   overflow-y: auto;
   padding: 20px;
-`
+`;
 
 export const InputWrap = styled.div`
   display: flex;
@@ -37,7 +37,7 @@ export const InputWrap = styled.div`
   justify-content: space-between;
   align-items: center;
   padding-right: 20px;
-`
+`;
 
 export const Textarea = styled.div`
   width: calc(100% - 30px);
@@ -47,12 +47,12 @@ export const Textarea = styled.div`
   color: #dddddd;
   &::-webkit-scrollbar {
     display: none;
-  };
+  }
 
   &:focus {
     outline: none;
-  };
-`
+  }
+`;
 export const StyledIcon = styled(FontAwesomeIcon)`
   cursor: pointer;
   color: #dddddd;
