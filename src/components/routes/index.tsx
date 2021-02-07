@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 
-import { PrivateRoute } from "helpest/PrivateRouter";
+import PrivateRoute from "components/private-route";
 import Chat from "pages/chat";
 import LogIn from "pages/log-in";
 

@@ -6,7 +6,7 @@ import { ThemeProvider } from "styled-components";
 
 import store from "./redux/store";
 import { history } from "utils/history";
-import Routes from "utils/routes";
+import Routes from "components/routes";
 import AppWrapper from "components/app-wrapper";
 import defaultTheme from "constants/theme/default-theme";
 
