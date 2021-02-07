@@ -19,7 +19,7 @@ const LogIn: FC = () => {
   const [isRegister, setIsRegister] = useState(true)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  let history = useHistory();
+  const history = useHistory();
 
   const register = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>) => {

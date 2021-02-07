@@ -4,7 +4,7 @@ import { auth } from '../../utils/firebase'
 import { MenuWrap, Wraper, LogOutBtn } from './style.component'
 
 const Menu = (): JSX.Element => {
-  let history = useHistory();
+  const history = useHistory();
 
   const logOut = () => {
     auth.signOut().then(() => {
