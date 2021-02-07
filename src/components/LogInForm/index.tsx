@@ -27,8 +27,6 @@ const LogIn: FC = () => {
     }, [email, password],
   )
 
-  console.log(auth);
-
   const signIn = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>) => {
       auth.signInWithEmailAndPassword(email, password)
