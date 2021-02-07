@@ -5,7 +5,7 @@ import firebase from "utils/firebase";
 export const setUseCreation = (payload: Partial<IUserState>) => {
   return {
     type: SET_USER_ACTION,
-    data: payload,
+    payload,
   };
 };
 

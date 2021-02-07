@@ -4,7 +4,7 @@ import { IChatState } from "./reducers";
 export const setStateCreation = (payload: Partial<IChatState>) => {
   return {
     type: SET_STATE_CHAT_ACTION,
-    data: payload,
+    payload,
   };
 };
 
