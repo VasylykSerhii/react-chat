@@ -1,4 +1,4 @@
-import { SET_USER_ACTION, GET_USER_ACTION } from "./actionsTypes";
+import { SET_USER_ACTION, GET_USER_ACTION } from "./actions-types";
 import { IUserState } from "./reducers";
 import firebase from "utils/firebase";
 
@@ -15,3 +15,10 @@ export const getUseCreation = (payload: firebase.auth.UserCredential) => {
     payload,
   };
 };
+
+const userActionCreators = {
+  setUseCreation,
+  getUseCreation,
+};
+
+export default userActionCreators;

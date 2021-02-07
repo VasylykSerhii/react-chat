@@ -1,5 +1,5 @@
 import { AnyAction } from "redux";
-import { SET_USER_ACTION } from "./actionsTypes";
+import { SET_USER_ACTION } from "./actions-types";
 
 export interface IUserState {
   email: string;

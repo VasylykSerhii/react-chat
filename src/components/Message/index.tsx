@@ -1,6 +1,6 @@
 import { IChatMessages } from "pages/chat";
 
-import { auth } from "utils/firebase";
+import { auth } from "utils";
 import {
   MessageWrapper,
   Wrapper,

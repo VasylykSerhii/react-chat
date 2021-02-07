@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+// TODO: split to separate files in ./styled subfolder
+
 export const ChatWrapper = styled.div`
   display: flex;
   align-items: center;

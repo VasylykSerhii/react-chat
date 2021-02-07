@@ -1,7 +1,7 @@
 import { all, takeEvery, put } from "redux-saga/effects";
 
-import { setUseCreation } from "./actionsCreators";
-import { GET_USER_ACTION } from "./actionsTypes";
+import { setUseCreation } from "./actions-creators";
+import { GET_USER_ACTION } from "./actions-types";
 
 export function* GET_USER(action) {
   yield put(setUseCreation({ loading: true }));

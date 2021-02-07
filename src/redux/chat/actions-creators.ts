@@ -1,4 +1,4 @@
-import { SET_STATE_CHAT_ACTION, GET_STATE_CHAT_ACTION } from "./actionsTypes";
+import { SET_STATE_CHAT_ACTION, GET_STATE_CHAT_ACTION } from "./actions-types";
 import { IChatState } from "./reducers";
 
 export const setStateCreation = (payload: Partial<IChatState>) => {
@@ -13,3 +13,10 @@ export const getStateCreation = () => {
     type: GET_STATE_CHAT_ACTION,
   };
 };
+
+const chatActionCreators = {
+  setStateCreation,
+  getStateCreation,
+};
+
+export default chatActionCreators;

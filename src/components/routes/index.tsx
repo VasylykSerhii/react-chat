@@ -1,15 +1,14 @@
 import React, { FC } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 
-import PrivateRoute from "components/private-route";
-import Chat from "pages/chat";
-import LogIn from "pages/log-in";
+import { PrivateRoute } from "components";
+import { ChatPage, LogInPage } from "pages";
 
 const Routes: FC = () => {
   return (
     <Switch>
-      <Route path="/log-in" children={<LogIn />} exact={true} />
-      <PrivateRoute path="/" children={<Chat />} exact={true} />
+      <Route path="/log-in" component={LogInPage} exact={true} />
+      <PrivateRoute path="/" component={ChatPage} exact={true} />
       {/* Instead, you can display a 404 page here if you wish */}
       <Redirect to="/" />
     </Switch>

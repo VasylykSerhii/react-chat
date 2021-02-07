@@ -1,5 +1,5 @@
 import { AnyAction } from "redux";
-import { SET_STATE_CHAT_ACTION } from "./actionsTypes";
+import { SET_STATE_CHAT_ACTION } from "./actions-types";
 
 export interface IChatState {
   data: [];

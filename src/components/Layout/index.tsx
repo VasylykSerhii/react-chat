@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from "react";
-import Menu from "components/menu";
 
+import { Menu } from "components";
 import { Wrapper } from "./styled";
 
 const Layout: FC<ReactNode> = ({ children }) => {

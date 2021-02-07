@@ -5,10 +5,9 @@ import { Router } from "react-router";
 import { ThemeProvider } from "styled-components";
 
 import store from "./redux/store";
-import { history } from "utils/history";
-import Routes from "components/routes";
-import AppWrapper from "components/app-wrapper";
-import defaultTheme from "constants/theme/default-theme";
+import { history } from "utils";
+import { AppWrapper, Routes } from "components";
+import { themes } from "constants/index";
 
 import "./index.css";
 
@@ -16,7 +15,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router history={history}>
-        <ThemeProvider theme={defaultTheme}>
+        <ThemeProvider theme={themes.defaultTheme}>
           <AppWrapper>
             <Routes />
           </AppWrapper>

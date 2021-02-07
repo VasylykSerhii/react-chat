@@ -17,9 +17,9 @@ import {
   SocialWrapper,
 } from "./styled";
 
-import firebase, { auth } from "../../utils/firebase";
+import { firebase, auth } from "utils";
+import { getUseCreation } from "redux/user/actions-creators";
 import manImg from "assets/images/man-300x300.png";
-import { getUseCreation } from "redux/user/actionsCreators";
 
 const LogIn: FC = () => {
   const dispatch = useDispatch();
