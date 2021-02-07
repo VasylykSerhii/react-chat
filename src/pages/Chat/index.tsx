@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 
-import firebase, { firestore, auth } from "../../utils/firebase";
+import { firebase, firestore, auth } from "utils";
 import Layout from "components/layout";
 import {
   ChatWrapper,

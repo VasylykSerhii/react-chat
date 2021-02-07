@@ -2,9 +2,10 @@ import React, { FC } from "react";
 import { Redirect } from "react-router-dom";
 
 import { LogInForm, LogInWrapper } from "components";
+import { authTokenService } from "services";
 
 const LogIn: FC = () => {
-  return localStorage.getItem("accessToken") ? (
+  return authTokenService.isTokenValid() ? (
     <Redirect to="/" />
   ) : (
     <LogInWrapper>

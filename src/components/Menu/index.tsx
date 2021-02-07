@@ -1,4 +1,5 @@
 import { useHistory } from "react-router-dom";
+import { authTokenService } from "services";
 
 import { auth } from "utils";
 import { MenuWrapper, Wrapper, LogOutButton } from "./styled";
@@ -10,7 +11,7 @@ const Menu = (): JSX.Element => {
     auth
       .signOut()
       .then(() => {
-        localStorage.removeItem("accessToken");
+        authTokenService.clearToken();
         history.push("/log-in");
       })
       .catch((error) => {

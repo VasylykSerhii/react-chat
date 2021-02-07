@@ -1,4 +1,5 @@
 import { all, takeEvery, put } from "redux-saga/effects";
+import { authTokenService } from "services";
 
 import { setUseCreation } from "./actions-creators";
 import { GET_USER_ACTION } from "./actions-types";
@@ -17,7 +18,8 @@ export function* GET_USER(action) {
   const { accessToken } = action.payload.credential;
 
   if (action.payload.additionalUserInfo.profile) {
-    localStorage.setItem("accessToken", accessToken);
+    authTokenService.setToken(accessToken);
+
     yield put(
       setUseCreation({
         lastName: family_name,
