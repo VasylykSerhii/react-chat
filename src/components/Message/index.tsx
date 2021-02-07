@@ -12,10 +12,9 @@ import {
 
 type Props = {
   message: IChatMessages;
-  key?: string;
 };
 
-const Message = ({ message, key }: Props): JSX.Element => {
+const Message = ({ message }: Props): JSX.Element => {
   return (
     <Wrapper>
       <MessageWrap myMessage={auth?.currentUser?.uid === message.uid}>

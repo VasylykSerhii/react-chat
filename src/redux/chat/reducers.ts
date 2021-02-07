@@ -1,5 +1,5 @@
 import { AnyAction } from "redux";
-import { SET_STATE_CHAT_ACTION} from "./actionsTypes";
+import { SET_STATE_CHAT_ACTION } from "./actionsTypes";
 
 export interface IChatState {
   data: [];
@@ -11,10 +11,7 @@ const initialState: IChatState = {
   loading: false,
 };
 
-export default function userReducer(
-  state = initialState,
-  action: AnyAction
-) {
+export default function userReducer(state = initialState, action: AnyAction) {
   switch (action.type) {
     case SET_STATE_CHAT_ACTION:
       return { ...state, ...action.data };
