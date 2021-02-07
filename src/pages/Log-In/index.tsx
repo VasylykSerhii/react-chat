@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react'
+import React, { FC } from 'react'
 import { Redirect } from "react-router-dom";
 
 import { Wrapper } from './style.component'

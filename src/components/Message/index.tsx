@@ -1,4 +1,3 @@
-import React, { useRef, useEffect } from "react"
 import { Wrapper } from './style.component'
 import { IChatMessages } from 'pages/Chat'
 

@@ -36,7 +36,7 @@ const LogIn: FC = () => {
           dispatch(getUseCreation(res))
           history.push("/")
         })
-    }, [email, password],
+    }, [dispatch, email, history, password],
   )
   const signInWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
@@ -45,14 +45,7 @@ const LogIn: FC = () => {
         dispatch(getUseCreation(result))
         history.push("/");
       }).catch((error) => {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
-        // ...
+        // TODO: Handle Errors here.
       });
   }
 
