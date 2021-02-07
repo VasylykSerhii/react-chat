@@ -1,7 +1,7 @@
 import { useHistory } from "react-router-dom";
 
 import { auth } from "utils/firebase";
-import { MenuWrap, Wraper, LogOutBtn } from "./style.component";
+import { MenuWrapper, Wrapper, LogOutButton } from "./styled";
 
 const Menu = (): JSX.Element => {
   const history = useHistory();
@@ -19,12 +19,12 @@ const Menu = (): JSX.Element => {
   };
 
   return (
-    <MenuWrap>
-      <Wraper>
+    <MenuWrapper>
+      <Wrapper>
         Menu
-        <LogOutBtn onClick={logOut}>Log Out</LogOutBtn>
-      </Wraper>
-    </MenuWrap>
+        <LogOutButton onClick={logOut}>Log Out</LogOutButton>
+      </Wrapper>
+    </MenuWrapper>
   );
 };
 

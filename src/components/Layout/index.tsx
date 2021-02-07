@@ -1,14 +1,14 @@
 import React, { FC, ReactNode } from "react";
 import Menu from "components/menu";
 
-import { Wraper } from "./style.component";
+import { Wrapper } from "./styled";
 
 const Layout: FC<ReactNode> = ({ children }) => {
   return (
-    <Wraper>
+    <Wrapper>
       <Menu />
       <main>{children}</main>
-    </Wraper>
+    </Wrapper>
   );
 };
 

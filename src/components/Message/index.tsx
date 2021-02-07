@@ -1,14 +1,14 @@
-import { Wrapper } from "./style.component";
 import { IChatMessages } from "pages/chat";
 
-import { auth } from "../../utils/firebase";
+import { auth } from "utils/firebase";
 import {
-  MessageWrap,
+  MessageWrapper,
+  Wrapper,
   Avatar,
   MessageText,
   Name,
   Text,
-} from "./style.component";
+} from "./styled";
 
 type Props = {
   message: IChatMessages;
@@ -17,13 +17,13 @@ type Props = {
 const Message = ({ message }: Props): JSX.Element => {
   return (
     <Wrapper>
-      <MessageWrap myMessage={auth?.currentUser?.uid === message.uid}>
+      <MessageWrapper myMessage={auth?.currentUser?.uid === message.uid}>
         <Avatar src={message.photoURL} />
         <MessageText myMessage={auth?.currentUser?.uid === message.uid}>
           <Name>{message.fullName}</Name>
           <Text>{message.text}</Text>
         </MessageText>
-      </MessageWrap>
+      </MessageWrapper>
     </Wrapper>
   );
 };

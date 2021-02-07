@@ -7,15 +7,15 @@ import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
 import { faGooglePlus, faFacebook } from "@fortawesome/free-brands-svg-icons";
 
 import {
-  Wraper,
+  Wrapper,
   Img,
   Input,
   Form,
-  InputWrap,
+  InputWrapper,
   Button,
   Link,
-  SocialWrap,
-} from "./style-component";
+  SocialWrapper,
+} from "./styled";
 
 import firebase, { auth } from "../../utils/firebase";
 import manImg from "assets/images/man-300x300.png";
@@ -58,23 +58,23 @@ const LogIn: FC = () => {
   };
 
   return (
-    <Wraper>
+    <Wrapper>
       <Img src={manImg} alt="avatar" />
       <Form>
-        <InputWrap>
+        <InputWrapper>
           <FontAwesomeIcon icon={faUser} size="lg" color="#222831" />
           <Input
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
           />
-        </InputWrap>
-        <InputWrap>
+        </InputWrapper>
+        <InputWrapper>
           <FontAwesomeIcon icon={faLock} size="lg" color="#222831" />
           <Input
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
-        </InputWrap>
+        </InputWrapper>
         <Button onClick={isRegister ? register : signIn} type="button">
           {isRegister ? "Sign Up" : "Sign In"}
         </Button>
@@ -83,7 +83,7 @@ const LogIn: FC = () => {
       <Link onClick={() => setIsRegister(!isRegister)}>
         {isRegister ? "Sign In" : "Sign Up"}
       </Link>
-      <SocialWrap>
+      <SocialWrapper>
         <FontAwesomeIcon
           icon={faGooglePlus}
           size="2x"
@@ -91,8 +91,8 @@ const LogIn: FC = () => {
           onClick={signInWithGoogle}
         />
         <FontAwesomeIcon icon={faFacebook} size="2x" color="#eeeeee" />
-      </SocialWrap>
-    </Wraper>
+      </SocialWrapper>
+    </Wrapper>
   );
 };
 
