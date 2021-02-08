@@ -1,29 +1,32 @@
 import { useHistory } from "react-router-dom";
+import { authTokenService } from "services";
 
-import { auth } from '../../utils/firebase'
-import { MenuWrap, Wraper, LogOutBtn } from './style.component'
+import { auth } from "utils";
+import { MenuWrapper, Wrapper, LogOutButton } from "./styled";
 
 const Menu = (): JSX.Element => {
-  let history = useHistory();
+  const history = useHistory();
 
   const logOut = () => {
-    auth.signOut().then(() => {
-      localStorage.removeItem('accessToken')
-      history.push("/log-in");
-    }).catch((error) => {
-      // An error happened.
-    });
-  }
+    auth
+      .signOut()
+      .then(() => {
+        authTokenService.clearToken();
+        history.push("/log-in");
+      })
+      .catch((error) => {
+        // An error happened.
+      });
+  };
 
   return (
-    <MenuWrap>
-      <Wraper>
+    <MenuWrapper>
+      <Wrapper>
         Menu
+        <LogOutButton onClick={logOut}>Log Out</LogOutButton>
+      </Wrapper>
+    </MenuWrapper>
+  );
+};
 
-        <LogOutBtn onClick={logOut}>Log Out</LogOutBtn>
-      </Wraper>
-    </MenuWrap>
-  )
-}
-
-export default Menu
+export default Menu;

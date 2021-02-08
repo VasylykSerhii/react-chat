@@ -1,27 +1,31 @@
-import React, { useRef, useEffect } from "react"
-import { Wrapper } from './style.component'
-import { IChatMessages } from 'pages/Chat'
+import { IChatMessages } from "pages/chat";
 
-import { auth } from "../../utils/firebase";
-import { MessageWrap, Avatar, MessageText, Name, Text } from './style.component'
+import { auth } from "utils";
+import {
+  MessageWrapper,
+  Wrapper,
+  Avatar,
+  MessageText,
+  Name,
+  Text,
+} from "./styled";
 
 type Props = {
-  message: IChatMessages,
-  key?: string
-}
+  message: IChatMessages;
+};
 
-const Message = ({ message, key }: Props): JSX.Element => {
+const Message = ({ message }: Props): JSX.Element => {
   return (
     <Wrapper>
-      <MessageWrap myMessage={auth?.currentUser?.uid === message.uid}>
+      <MessageWrapper myMessage={auth?.currentUser?.uid === message.uid}>
         <Avatar src={message.photoURL} />
         <MessageText myMessage={auth?.currentUser?.uid === message.uid}>
           <Name>{message.fullName}</Name>
           <Text>{message.text}</Text>
         </MessageText>
-      </MessageWrap>
-    </Wrapper >
-  )
-}
+      </MessageWrapper>
+    </Wrapper>
+  );
+};
 
-export default Message
+export default Message;

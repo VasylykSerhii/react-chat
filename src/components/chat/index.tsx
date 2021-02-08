@@ -3,7 +3,7 @@ import { useCollectionData } from "react-firebase-hooks/firestore";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 
 import { firebase, firestore, auth } from "utils";
-import Layout from "components/layout";
+import { Layout, Message } from "components";
 import {
   ChatWrapper,
   Chat,
@@ -12,7 +12,6 @@ import {
   ChatTextarea,
   ChatStyledIcon,
 } from "./style.component";
-import Message from "components/message";
 
 export interface IChatMessages {
   text: string;

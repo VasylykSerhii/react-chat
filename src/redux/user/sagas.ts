@@ -1,29 +1,36 @@
 import { all, takeEvery, put } from "redux-saga/effects";
+import { authTokenService } from "services";
 
-import { setUseCreation } from "./actionsCreators";
-import { GET_USER_ACTION } from "./actionsTypes";
-// import { getAdminProjects, createAdminProject } from '@/services/chats.js'
+import { setUseCreation } from "./actions-creators";
+import { GET_USER_ACTION } from "./actions-types";
 
 export function* GET_USER(action) {
   yield put(setUseCreation({ loading: true }));
-  
+
   const {
-    email, family_name, given_name, id, picture
+    email,
+    family_name,
+    given_name,
+    id,
+    picture,
   } = action.payload.additionalUserInfo.profile;
 
-  const {accessToken} = action.payload.credential
+  const { accessToken } = action.payload.credential;
 
   if (action.payload.additionalUserInfo.profile) {
-    localStorage.setItem('accessToken', accessToken);
-    yield put(setUseCreation({ 
-      lastName: family_name,
-      firstName: given_name,
-      id,
-      picture,
-      email,
-      loading: false,
-      isAuth: true,
-    }));
+    authTokenService.setToken(accessToken);
+
+    yield put(
+      setUseCreation({
+        lastName: family_name,
+        firstName: given_name,
+        id,
+        picture,
+        email,
+        loading: false,
+        isAuth: true,
+      })
+    );
   }
 }
 

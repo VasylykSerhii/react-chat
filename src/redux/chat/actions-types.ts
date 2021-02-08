@@ -1,0 +1,2 @@
+export const SET_STATE_CHAT_ACTION = "chat/SET_STATE_CHAT_ACTION";
+export const GET_STATE_CHAT_ACTION = "chat/GET_STATE_CHAT_ACTION";

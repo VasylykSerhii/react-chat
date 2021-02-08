@@ -1,16 +1,17 @@
-import React, { FC, useEffect } from 'react'
+import React, { FC } from "react";
 import { Redirect } from "react-router-dom";
 
-import { Wrapper } from './style.component'
-import LogInForm from 'components/LogInForm'
+import { LogInForm, LogInWrapper } from "components";
+import { authTokenService } from "services";
 
 const LogIn: FC = () => {
-  return localStorage.getItem('accessToken')
-    ? <Redirect to="/" />
-    : <Wrapper>
+  return authTokenService.isTokenValid() ? (
+    <Redirect to="/" />
+  ) : (
+    <LogInWrapper>
       <LogInForm />
-    </Wrapper>
+    </LogInWrapper>
+  );
+};
 
-}
-
-export default LogIn
+export default LogIn;
