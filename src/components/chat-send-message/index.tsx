@@ -17,8 +17,8 @@ function ChatSendMessage() {
   )
 
   const send = async (e) => {
-    if (message !== '') {
-      if ((!e.ctrlKey && e.charCode === 13) || e.type === "click") {
+    if (message.trim().length > 0) {
+      if (e.keyCode === 13 || e.type === "click") {
         await messagesRef
           .add({
             text: message,
@@ -38,11 +38,12 @@ function ChatSendMessage() {
     <ChatInputWrapper>
       <ChatTextarea
         onChange={handleChange}
+        onKeyDown={send}
         value={message}
         maxRows={5}
       ></ChatTextarea>
 
-      <ChatStyledIcon icon={faPaperPlane} size="lg" onClick={send} />
+      <ChatStyledIcon icon={faPaperPlane} size="sm" onClick={send} />
     </ChatInputWrapper>
   )
 }

@@ -6,7 +6,6 @@ export const ChatInputWrapper = styled.div`
   display: flex;
   width: 100%;
   max-height: 35%;
-  min-height: 40px;
   background-color: #30475e;
   justify-content: space-between;
   align-items: center;
