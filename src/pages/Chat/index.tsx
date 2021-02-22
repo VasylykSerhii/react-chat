@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useCallback } from "react";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 
@@ -26,7 +26,7 @@ export interface IChatMessages {
   fullName: string;
 }
 
-const Home = (): JSX.Element => {
+const ChatPage = (): JSX.Element => {
   const [message, setMessage] = useState("");
   const messagesRef = firestore.collection("messages");
   const query = messagesRef.orderBy("createdAt").limitToLast(25);
@@ -34,26 +34,31 @@ const Home = (): JSX.Element => {
   const textDiv = useRef<HTMLDivElement>(null);
   const last = useRef<HTMLSpanElement>(null);
 
-  const handleChange = (e) => {
-    setMessage(e.target.outerText);
-  };
+  const handleChange = useCallback(
+    (e) => {
+      setMessage(e.target.value);
+    },
+    [],
+  )
 
   const send = async (e) => {
-    if ((!e.ctrlKey && e.charCode === 13) || e.type === "click") {
-      await messagesRef
-        .add({
-          text: message,
-          createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-          uid: auth?.currentUser?.uid,
-          photoURL: auth?.currentUser?.photoURL,
-          fullName: auth?.currentUser?.displayName,
-        })
-        .then(function () {
-          if (textDiv && textDiv.current) {
-            textDiv.current.innerHTML = "";
-          }
-          setMessage("");
-        });
+    if (message !== '') {
+      if ((!e.ctrlKey && e.charCode === 13) || e.type === "click") {
+        await messagesRef
+          .add({
+            text: message,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+            uid: auth?.currentUser?.uid,
+            photoURL: auth?.currentUser?.photoURL,
+            fullName: auth?.currentUser?.displayName,
+          })
+          .then(function () {
+            if (textDiv && textDiv.current) {
+              textDiv.current.innerHTML = "";
+            }
+            setMessage("");
+          });
+      }
     }
   };
 
@@ -61,7 +66,7 @@ const Home = (): JSX.Element => {
     if (last && last.current) {
       last.current.scrollIntoView({ behavior: "smooth" });
     }
-  }, [message]);
+  }, [message, last]);
 
   return (
     <Layout>
@@ -75,10 +80,10 @@ const Home = (): JSX.Element => {
           </ChatMessages>
           <ChatInputWrapper>
             <ChatTextarea
-              contentEditable={true}
-              onInput={handleChange}
-              onKeyPress={send}
-              ref={textDiv}
+              onChange={handleChange}
+              // onKeyPress={send}
+              value={message}
+              maxRows={5}
             ></ChatTextarea>
 
             <ChatStyledIcon icon={faPaperPlane} size="lg" onClick={send} />
@@ -89,4 +94,4 @@ const Home = (): JSX.Element => {
   );
 };
 
-export default Home;
+export default ChatPage;

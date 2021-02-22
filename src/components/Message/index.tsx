@@ -1,4 +1,4 @@
-import { IChatMessages } from "pages/chat";
+import { IChatMessages } from "pages/Chat";
 
 import { auth } from "utils";
 import {

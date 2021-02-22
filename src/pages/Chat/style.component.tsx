@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import TextareaAutosize from 'react-textarea-autosize';
 
 export const ChatWrapper = styled.div`
   display: flex;
@@ -39,15 +40,15 @@ export const ChatInputWrapper = styled.div`
   padding-right: 20px;
 `;
 
-export const ChatTextarea = styled.div`
+export const ChatTextarea = styled(TextareaAutosize)`
   width: calc(100% - 30px);
   height: 100%;
   padding: 10px;
   overflow-y: auto;
   color: #dddddd;
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  background-color: transparent;
+  border: none;
+  resize: none;
 
   &:focus {
     outline: none;
